@@ -1,7 +1,12 @@
 import Link from "next/link";
 import React from "react";
-import { FaArrowRight, FaIndianRupeeSign, FaUsers, FaCarSide } from "react-icons/fa6";
-import { PiDroneFill } from "react-icons/pi";
+import {
+  FaArrowRight,
+  FaCircleCheck,
+  FaIndianRupeeSign,
+  FaUsers,
+} from "react-icons/fa6";
+import { GiCarWheel } from "react-icons/gi";
 
 import PageHeader from "../components/PageHeader";
 import {
@@ -12,18 +17,6 @@ import {
   getFundraisingTeamLabel,
   type FundraisingItem,
 } from "@/lib/fundraising";
-
-function FundraisingVehicleIcon({ team }: { team: FundraisingItem["team"] }) {
-  if (team === "atv") {
-    return <FaCarSide className="text-lg" />;
-  }
-
-  if (team === "uav") {
-    return <PiDroneFill className="text-lg" />;
-  }
-
-  return <FaIndianRupeeSign className="text-lg" />;
-}
 
 function getAccentClasses(team: FundraisingItem["team"]) {
   if (team === "atv") {
@@ -59,6 +52,20 @@ function getAccentClasses(team: FundraisingItem["team"]) {
     hover: "hover:border-white hover:text-white",
     glow: "bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.14),transparent_30%),linear-gradient(90deg,rgba(16,16,18,0.78),rgba(16,16,18,0.94)_42%,rgba(16,16,18,0.8))]",
   };
+}
+
+function getMilestoneIcon(title: string) {
+  const normalizedTitle = title.toLowerCase();
+
+  if (
+    normalizedTitle.includes("tire") ||
+    normalizedTitle.includes("tyre") ||
+    normalizedTitle.includes("wheel")
+  ) {
+    return GiCarWheel;
+  }
+
+  return FaCircleCheck;
 }
 
 async function page() {
@@ -146,7 +153,7 @@ async function page() {
 
                   <div className="relative space-y-8 px-6 py-6 sm:px-8 sm:py-8">
                     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_16rem] lg:items-start">
-                      <div className="space-y-4">
+                      <div className="relative z-20 space-y-4">
                         <div className="flex items-center justify-between gap-4">
                           <p className="font-heading text-sm uppercase tracking-[0.24em] text-white">
                             Progress Tracker
@@ -156,12 +163,12 @@ async function page() {
                           </p>
                         </div>
 
-                        <div className="rounded-tl-[2rem] rounded-br-[2rem] border border-white/10 bg-black/25 px-4 py-5 shadow-inner shadow-white/5 backdrop-blur-sm sm:px-5">
+                        <div className="relative z-20 rounded-tl-[2rem] rounded-br-[2rem] border border-white/10 bg-black/25 px-4 py-5 shadow-inner shadow-white/5 backdrop-blur-sm sm:px-5">
                           <div className="flex items-center justify-end gap-4 text-[0.65rem] uppercase tracking-[0.18em] text-white/45">
                             <span>{formatFundraisingCurrency(item.goal)}</span>
                           </div>
 
-                          <div className="relative mt-8 pb-12">
+                          <div className="relative mt-8 pb-8">
                             <div className="relative">
                               <div className="relative h-6 rounded-full border border-white/10 bg-white/8 shadow-inner shadow-black/30">
                                 <div className="absolute inset-y-0 left-0 w-full rounded-full bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.05)_0px,rgba(255,255,255,0.05)_18px,transparent_18px,transparent_36px)]" />
@@ -176,6 +183,13 @@ async function page() {
                                     100,
                                   );
                                   const isReached = item.raised >= milestone.amount;
+                                  const MilestoneIcon = getMilestoneIcon(milestone.title);
+                                  const tooltipAlignment =
+                                    milestonePosition < 16
+                                      ? "left-0 translate-x-0"
+                                      : milestonePosition > 84
+                                        ? "right-0 translate-x-0"
+                                        : "left-1/2 -translate-x-1/2";
 
                                   return (
                                     <div
@@ -183,26 +197,34 @@ async function page() {
                                       className="absolute top-1/2 z-10 -translate-x-1/2 -translate-y-1/2"
                                       style={{ left: `${milestonePosition}%` }}
                                     >
-                                      <div
-                                        className={`h-6 w-6 rounded-full border-2 shadow-[0_0_0_5px_rgba(16,16,18,0.95)] ${
+                                      <button
+                                        type="button"
+                                        aria-label={`${milestone.title} at ${formatFundraisingCurrency(milestone.amount)}`}
+                                        className={`group relative flex h-8 w-8 items-center justify-center rounded-full border-2 text-sm shadow-[0_0_0_5px_rgba(16,16,18,0.95)] transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/35 ${
                                           isReached
-                                            ? `${accent.bar} border-transparent`
+                                            ? `${accent.bar} border-transparent text-brand-dark`
                                             : `bg-brand-dark ${accent.marker}`
                                         }`}
-                                      />
-                                      <div className="absolute top-8 left-1/2 hidden w-36 -translate-x-1/2 text-center sm:block">
-                                        <p className={`font-heading text-[0.58rem] uppercase leading-4 tracking-[0.16em] ${
-                                          isReached ? accent.text : "text-white/45"
-                                        }`}>
-                                          {isReached ? "Unlocked" : "Target"}
-                                        </p>
-                                        <p className="mt-1 text-[0.62rem] uppercase leading-4 tracking-[0.14em] text-white/65">
-                                          {formatFundraisingCurrency(milestone.amount)}
-                                        </p>
-                                        <p className="mt-1 line-clamp-2 text-[0.68rem] leading-4 text-white/75">
-                                          {milestone.title}
-                                        </p>
-                                      </div>
+                                      >
+                                        {isReached ? (
+                                          <MilestoneIcon aria-hidden="true" />
+                                        ) : (
+                                          <span className="h-2.5 w-2.5 rounded-full bg-current" />
+                                        )}
+                                        <span className={`pointer-events-none absolute top-10 z-[999] w-44 rounded-tl-2xl rounded-br-2xl border border-white/10 bg-[#111111] px-4 py-3 text-left text-white opacity-0 shadow-2xl shadow-black/40 transition group-hover:translate-y-1 group-hover:opacity-100 group-focus:translate-y-1 group-focus:opacity-100 sm:w-52 ${tooltipAlignment}`}>
+                                          <span className={`block font-heading text-[0.58rem] uppercase leading-4 tracking-[0.18em] ${isReached ? accent.text : "text-white/50"}`}>
+                                            {isReached ? "Unlocked" : "Target"} {formatFundraisingCurrency(milestone.amount)}
+                                          </span>
+                                          <span className="mt-2 block text-xs font-semibold leading-5">
+                                            {milestone.title}
+                                          </span>
+                                          {milestone.description ? (
+                                            <span className="mt-1 block text-[0.7rem] leading-5 text-white/65">
+                                              {milestone.description}
+                                            </span>
+                                          ) : null}
+                                        </span>
+                                      </button>
                                     </div>
                                   );
                                 })}
@@ -219,40 +241,6 @@ async function page() {
                               </div>
                             </div>
                           </div>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                          {item.milestones.map((milestone, index) => {
-                            const isReached = item.raised >= milestone.amount;
-                            const isCurrent =
-                              !isReached &&
-                              (index === 0 || item.raised >= item.milestones[index - 1].amount);
-
-                            return (
-                              <div
-                                key={`${item._id}-chip-${milestone.amount}`}
-                                className={`group relative overflow-hidden rounded-tl-2xl rounded-br-2xl border px-3 py-4 text-center text-xs shadow-[0_10px_24px_rgba(0,0,0,0.16)] transition duration-300 hover:-translate-y-1 ${
-                                  isReached
-                                    ? `${accent.soft} text-white shadow-[0_10px_24px_rgba(0,0,0,0.22)]`
-                                    : isCurrent
-                                      ? `border-white/25 bg-white/10 text-white`
-                                      : "border-white/10 bg-black/20 text-white/55"
-                                }`}
-                              >
-                                <div className="absolute inset-x-0 top-0 h-1 bg-white/10">
-                                  <div className={`h-full ${isReached || isCurrent ? accent.bar : "bg-white/20"}`} />
-                                </div>
-                                <p className={`font-heading text-[0.62rem] uppercase tracking-[0.2em] ${isReached || isCurrent ? accent.text : "text-white/35"}`}>
-                                  {isReached
-                                    ? `Reached at ${formatFundraisingCurrency(milestone.amount)}`
-                                    : isCurrent
-                                      ? `Next target ${formatFundraisingCurrency(milestone.amount)}`
-                                      : `Locked at ${formatFundraisingCurrency(milestone.amount)}`}
-                                </p>
-                                <p className="mt-2 font-medium">{milestone.title}</p>
-                              </div>
-                            );
-                          })}
                         </div>
                       </div>
 

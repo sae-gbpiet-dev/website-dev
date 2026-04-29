@@ -77,6 +77,7 @@ function GalleryCard({
     >
       <article
         ref={cardRef}
+        tabIndex={0}
         className="group relative overflow-hidden rounded-tl-[2.5rem] rounded-br-[2.5rem] border border-white/10 bg-zinc-900 shadow-[0_18px_40px_rgba(0,0,0,0.28)] transition-transform duration-200 ease-out"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(21,101,169,0.14),transparent_42%)] pointer-events-none" />
@@ -88,21 +89,21 @@ function GalleryCard({
               alt={photo.alt}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition duration-500 group-hover:scale-[1.03]"
+              className="object-cover transition duration-500 group-hover:scale-[1.04] group-hover:blur-sm group-focus:scale-[1.04] group-focus:blur-sm"
             />
           ) : (
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.35),transparent_38%),linear-gradient(145deg,rgba(21,101,169,0.95),rgba(34,34,34,0.92)_58%,rgba(245,158,11,0.6))]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.35),transparent_38%),linear-gradient(145deg,rgba(21,101,169,0.95),rgba(34,34,34,0.92)_58%,rgba(245,158,11,0.6))] transition duration-500 group-hover:blur-sm group-focus:blur-sm" />
           )}
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/85" />
+          <div className="absolute inset-0 bg-black/0 backdrop-blur-0 transition duration-500 group-hover:bg-black/55 group-hover:backdrop-blur-[2px] group-focus:bg-black/55 group-focus:backdrop-blur-[2px]" />
           <div className="absolute top-0 left-0 h-2 w-full bg-[repeating-linear-gradient(45deg,black_0px,black_6px,white_6px,white_12px)] opacity-25" />
 
-          <div className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/35 px-3 py-1 text-[0.65rem] font-heading uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+          <div className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/45 px-3 py-1 text-[0.65rem] font-heading uppercase tracking-[0.18em] text-white opacity-0 backdrop-blur-sm transition duration-500 group-hover:opacity-100 group-focus:opacity-100">
             {category?.title || photo.category}
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-            <div className="translate-y-0 transition duration-500 md:translate-y-14 md:group-hover:translate-y-0 md:group-focus-within:translate-y-0">
+          <div className="absolute inset-0 flex items-center p-5 opacity-0 transition duration-500 group-hover:opacity-100 group-focus:opacity-100 sm:p-6">
+            <div className="w-full translate-y-4 transition duration-500 group-hover:translate-y-0 group-focus:translate-y-0">
               <div className="space-y-2">
                 <p className="text-[0.7rem] font-heading uppercase tracking-[0.24em] text-brand-gold">
                   {photo.eventName}
@@ -112,7 +113,7 @@ function GalleryCard({
                 </h3>
               </div>
 
-              <div className="mt-4 grid gap-2 border-t border-white/15 pt-4 text-sm text-zinc-200 opacity-100 transition duration-500 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+              <div className="mt-4 grid gap-2 border-t border-white/15 pt-4 text-sm text-zinc-200">
                 <p>
                   <span className="font-heading text-[0.65rem] uppercase tracking-[0.2em] text-brand-gold">
                     Date

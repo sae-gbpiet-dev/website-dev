@@ -19,6 +19,29 @@ export interface GallerySection {
   description: string;
 }
 
+interface GalleryEvent {
+  eventId: number;
+  eventName: string;
+  category: GalleryCategory;
+  location: string;
+  capturedAt: string;
+  description: string;
+  imageIds: string[];
+}
+
+export function getGoogleDriveImageUrl(fileId: string) {
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1600`;
+}
+
+export const featuredGalleryImages = {
+  induction: getGoogleDriveImageUrl("1uNZHjyd8hAiDdhTIzKQHcKW5r1pgred9"),
+  workshop: getGoogleDriveImageUrl("1yjAOVz1U38HgiQxju7ZrSTk6B7JV6U2K"),
+  baja: getGoogleDriveImageUrl("1ASyI7s2BJnQaOgISuxDdY7fcny3yIBk_"),
+  cadathon: getGoogleDriveImageUrl("1eArmXcXSugndgLnU4VaUQNKaTyzXRDqp"),
+  catalyst: getGoogleDriveImageUrl("1Y7qNS8aEVvLBd4IX0v9S-__6fmiJiH6b"),
+  waterRocket: getGoogleDriveImageUrl("1auOAQ4zztmb_yW_MXJ37Wo5etOoLXRmN"),
+};
+
 export const gallerySections: GallerySection[] = [
   {
     id: "events",
@@ -50,150 +73,129 @@ export const gallerySections: GallerySection[] = [
   },
 ];
 
-export const galleryPhotos: GalleryPhoto[] = [
+const galleryEvents: GalleryEvent[] = [
   {
-    id: "events-placeholder",
-    title: "Add your first event photo",
-    eventName: "Upcoming Event",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
-    description:
-      "Replace this placeholder with a real image link and keep the title, event, location, time, and description updated here.",
-    imageUrl: "",
-    alt: "Placeholder for an event gallery image",
+    eventId: 1,
+    eventName: "Induction 2025-26",
     category: "events",
+    location: "GBPIET Campus",
+    capturedAt: "2025-26",
+    description:
+      "New members stepping into the SAE GBPIET workspace, meeting the team, and beginning their first season with the club.",
+    imageIds: [
+      "1uNZHjyd8hAiDdhTIzKQHcKW5r1pgred9",
+      "1NVOqslbm1VXo3ZaAge9k86eDgN50omKD",
+      "1RFCJkD3KIb8axkEnkBunKk1UNBfHyPxF",
+      "1NvM2ENWbCyXtQH7PvQet6qYsnS_JjSuJ",
+      "14WmrQEPVN6A2myEKoM98DOPmioHKY8i7",
+      "1_oyraiSidZvwAbKVHTNCT8_wUTzZODZk",
+      "1e3Ptn2yEs9oF0tz4gRrPDSGmEW9JkJ4z",
+      "1mjw0svJCzd491GAhX8MHtwWrcE2_AB_U",
+      "1dhqaxxJc-v4d9xv-kbN1tUtAJo3jWCke",
+    ],
   },
   {
-    id: "uav-placeholder",
-    title: "Add your first UAV photo",
-    eventName: "UAV Demo",
-    location: "Testing ground",
-    capturedAt: "Add date and time",
+    eventId: 2,
+    eventName: "KV Workshop 2025-26",
+    category: "events",
+    location: "Workshop Session",
+    capturedAt: "2025-26",
     description:
-      "Use this entry to store the image link and the hover details that should appear when the photo is focused.",
-    imageUrl: "",
-    alt: "Placeholder for a UAV gallery image",
-    category: "uav",
+      "Hands-on workshop moments where students learned by building, testing, asking questions, and working alongside the team.",
+    imageIds: [
+      "1ZQ2wiOG2Uv0UVwS166V_XW_JsD-i9qYv",
+      "16InSr78ladoylJ3wh9LzAaWkbs5Id6NB",
+      "1SGluvnvInfYX87vjC7RltJ1U-LIIGpi2",
+      "15B_nF0pl9rbQQfYhVvAgI4_O-QzKHPtV",
+      "19kKItgi0_XGefDU4yC_IP6gguvdXJTNu",
+      "1oX1RRrOzwBG9cG2baHcNZbh0PxDp2nt6",
+      "1yjAOVz1U38HgiQxju7ZrSTk6B7JV6U2K",
+    ],
   },
   {
-    id: "atv-placeholder",
-    title: "Add your first ATV photo",
-    eventName: "ATV Session",
-    location: "Workshop or track",
-    capturedAt: "Add date and time",
-    description:
-      "Each image is managed here so the gallery page stays simple while the photo metadata remains easy to edit.",
-    imageUrl: "",
-    alt: "Placeholder for an ATV gallery image",
+    eventId: 3,
+    eventName: "BAJA 2025-26",
     category: "atv",
+    location: "BAJA Event",
+    capturedAt: "2025-26",
+    description:
+      "The ATV team in competition mode, carrying months of design, fabrication, tuning, and endurance work onto the field.",
+    imageIds: [
+      "1ASyI7s2BJnQaOgISuxDdY7fcny3yIBk_",
+      "1nnAtYBv9coiWxR82DCc8wWgghk7Koe-W",
+      "1V2ul0slyebDjXBXxPSno-mW8sd0bIxKk",
+      "1A4Ch91B5L36N-m9XUecs9uPS2ZsYWuDa",
+      "1-v6E5pw1SGJuXLyA1J46_F7tqDstb2JB",
+      "1oII681CHeHYliuukaafj4Ly4zVAOJQoo",
+      "1vfam6B9AflghVSPesi8KxSlvQp7o-MvH",
+    ],
   },
   {
-    id: "misc-placeholder",
-    title: "Add your first miscellaneous photo",
-    eventName: "Team Moment",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
+    eventId: 4,
+    eventName: "SolidWorks Workshop and Cadathon 2025-26",
+    category: "events",
+    location: "CAD Lab",
+    capturedAt: "2025-26",
     description:
-      "Store any extra photo link here along with the text you want visitors to discover on hover.",
-    imageUrl: "",
-    alt: "Placeholder for a miscellaneous gallery image",
-    category: "miscellaneous",
+      "Design thinking, CAD practice, and rapid problem solving from the SolidWorks workshop and Cadathon sessions.",
+    imageIds: [
+      "1eArmXcXSugndgLnU4VaUQNKaTyzXRDqp",
+      "1GUWFO_kMTVjMnbf0Sy_OUXF1S3DSFnvu",
+      "1JPdomG0ioVNe2ekWEkX3Xi25ACucsKou",
+      "1Cp_T5ITv7sJlpUIcPxk6bEXNII-MIFI8",
+      "1nBZUIRKniJRgEeVzLKzr08QU2itzFiSZ",
+    ],
   },
-   {
-    id: "misc-placeholder-2",
-    title: "Add your first miscellaneous photo",
-    eventName: "Team Moment",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
+  {
+    eventId: 5,
+    eventName: "Catalyst 2026",
+    category: "miscellaneous",
+    location: "Catalyst Event",
+    capturedAt: "2026",
     description:
-      "Store any extra photo link here along with the text you want visitors to discover on hover.",
-    imageUrl: "",
-    alt: "Placeholder for a miscellaneous gallery image",
-    category: "miscellaneous",
+      "Team presence, student energy, and the small moments that made Catalyst a memorable part of the SAE calendar.",
+    imageIds: [
+      "1Y7qNS8aEVvLBd4IX0v9S-__6fmiJiH6b",
+      "1_r9pk4LO7fx1U-SWL-hTjyTndy6Vx-Es",
+      "1IbSfZ7SuOArn0LwqlCdhR3GuRspg1hGR",
+      "1SBVDIqcQyi-Ezba2mUCW23g2b4WeP-t2",
+      "175a22hdW7Szr_Dj7gcq5rIJ9RrfGAs7p",
+      "1c4a1hXBHhuCWMqKmCXEj09-PxhJZiOtB",
+    ],
   },
-   {
-    id: "misc-placeholder-3",
-    title: "Add your first miscellaneous photo",
-    eventName: "Team Moment",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
+  {
+    eventId: 6,
+    eventName: "Water Rocket 3.0 2025-26",
+    category: "uav",
+    location: "Launch Ground",
+    capturedAt: "2025-26",
     description:
-      "Store any extra photo link here along with the text you want visitors to discover on hover.",
-    imageUrl: "",
-    alt: "Placeholder for a miscellaneous gallery image",
-    category: "miscellaneous",
+      "Launch prep, testing, recovery, and the practical thrill of learning flight through the Water Rocket 3.0 event.",
+    imageIds: [
+      "1auOAQ4zztmb_yW_MXJ37Wo5etOoLXRmN",
+      "1zr2jnZzVedMUZQJEdgxX_ghipJXiV7Xf",
+      "1YKgXlnlfDJ2dnI3fT7-fNHYlgmV5y2vp",
+      "18910sVXnA119O5KjyuuhNXnoRE3ilvpv",
+      "1kXvTC-6GuEsSTZqxWpHB9qYnBzzgAaz5",
+      "1Oe4LFkquYqy0xDSbmP38dLAvu422f-me",
+      "1Oe4LFkquYqy0xDSbmP38dLAvu422f-me",
+      "1P_RnVcNhul9eMoau9Ak-VnWXh9AM5LSp",
+      "1QbRobJlR_wwHJpWcyGW_5HoHDO0C_tnx",
+      "1lul6D8pndNhZypM9-UdEYGF3S4wOTuyu",
+    ],
   },
-   {
-    id: "misc-placeholder-4",
-    title: "Add your first miscellaneous photo",
-    eventName: "Team Moment",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
-    description:
-      "Store any extra photo link here along with the text you want visitors to discover on hover.",
-    imageUrl: "",
-    alt: "Placeholder for a miscellaneous gallery image",
-    category: "miscellaneous",
-  },
-   {
-    id: "misc-placeholder-5",
-    title: "Add your first miscellaneous photo",
-    eventName: "Team Moment",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
-    description:
-      "Store any extra photo link here along with the text you want visitors to discover on hover.",
-    imageUrl: "",
-    alt: "Placeholder for a miscellaneous gallery image",
-    category: "miscellaneous",
-  },
-   {
-    id: "misc-placeholder-6",
-    title: "Add your first miscellaneous photo",
-    eventName: "Team Moment",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
-    description:
-      "Store any extra photo link here along with the text you want visitors to discover on hover.",
-    imageUrl: "",
-    alt: "Placeholder for a miscellaneous gallery image",
-    category: "miscellaneous",
-  },
-   {
-    id: "misc-placeholder-7",
-    title: "Add your first miscellaneous photo",
-    eventName: "Team Moment",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
-    description:
-      "Store any extra photo link here along with the text you want visitors to discover on hover.",
-    imageUrl: "",
-    alt: "Placeholder for a miscellaneous gallery image",
-    category: "miscellaneous",
-  },
-   {
-    id: "misc-placeholder-8",
-    title: "Add your first miscellaneous photo",
-    eventName: "Team Moment",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
-    description:
-      "Store any extra photo link here along with the text you want visitors to discover on hover.",
-    imageUrl: "",
-    alt: "Placeholder for a miscellaneous gallery image",
-    category: "miscellaneous",
-  },
-   {
-    id: "misc-placeholder-9",
-    title: "Add your first miscellaneous photo",
-    eventName: "Team Moment",
-    location: "Add location in galleryData.ts",
-    capturedAt: "Add date and time",
-    description:
-      "Store any extra photo link here along with the text you want visitors to discover on hover.",
-    imageUrl: "",
-    alt: "Placeholder for a miscellaneous gallery image",
-    category: "miscellaneous",
-  },
-  
 ];
+
+export const galleryPhotos: GalleryPhoto[] = galleryEvents.flatMap((event) =>
+  event.imageIds.map((imageId, index) => ({
+    id: `event-${event.eventId}-${index + 1}`,
+    title: `${event.eventName} Frame ${String(index + 1).padStart(2, "0")}`,
+    eventName: event.eventName,
+    location: event.location,
+    capturedAt: event.capturedAt,
+    description: event.description,
+    imageUrl: getGoogleDriveImageUrl(imageId),
+    alt: `${event.eventName} photo ${index + 1}`,
+    category: event.category,
+  })),
+);

@@ -138,7 +138,7 @@ function Navbar() {
       />
 
       <aside
-        className={`fixed top-0 right-0 z-50 flex h-screen w-[min(22rem,88vw)] flex-col border-l border-white/10 bg-[#111111]/95 p-5 text-white shadow-2xl backdrop-blur-xl transition-transform duration-300 lg:hidden ${
+        className={`fixed top-0 right-0 z-50 flex h-[100dvh] max-h-[100dvh] w-[min(22rem,88vw)] flex-col overflow-hidden border-l border-white/10 bg-[#111111]/95 px-5 pt-5 text-white shadow-2xl backdrop-blur-xl transition-transform duration-300 lg:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!isMenuOpen}
@@ -155,12 +155,12 @@ function Navbar() {
           </button>
         </div>
 
-        <div className="mt-6 flex-1 overflow-y-auto font-heading">
+        <div className="mt-4 min-h-0 flex-1 overflow-y-auto pb-3 font-heading">
           <ul className="flex flex-col gap-2 text-sm">
             <li>
               <a
                 href="/"
-                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-3 transition duration-300 hover:bg-brand-blue hover:text-white ${
+                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-2.5 transition duration-300 hover:bg-brand-blue hover:text-white ${
                   isActivePath("/") ? "bg-white/8 text-brand-gold" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -171,7 +171,7 @@ function Navbar() {
             <li>
               <a
                 href="/about"
-                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-3 transition duration-300 hover:bg-brand-blue hover:text-white ${
+                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-2.5 transition duration-300 hover:bg-brand-blue hover:text-white ${
                   isActivePath("/about") ? "bg-white/8 text-brand-gold" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -182,7 +182,7 @@ function Navbar() {
             <li>
               <a
                 href="/teams"
-                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-3 transition duration-300 hover:bg-brand-blue hover:text-white ${
+                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-2.5 transition duration-300 hover:bg-brand-blue hover:text-white ${
                   isActivePath("/teams") ? "bg-white/8 text-brand-gold" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -193,7 +193,7 @@ function Navbar() {
             <li>
               <a
                 href="/people"
-                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-3 transition duration-300 hover:bg-brand-blue hover:text-white ${
+                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-2.5 transition duration-300 hover:bg-brand-blue hover:text-white ${
                   isActivePath("/people") ? "bg-white/8 text-brand-gold" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -205,7 +205,7 @@ function Navbar() {
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className={`block rounded-tl-2xl rounded-br-2xl px-4 py-3 transition duration-300 hover:bg-brand-blue hover:text-white ${
+                  className={`block rounded-tl-2xl rounded-br-2xl px-4 py-2.5 transition duration-300 hover:bg-brand-blue hover:text-white ${
                     isActivePath(item.href) ? "bg-brand-blue text-white" : ""
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -217,9 +217,15 @@ function Navbar() {
           </ul>
         </div>
 
-        <button className="mt-6 w-full cursor-pointer rounded-tl-2xl rounded-br-2xl border border-brand-blue bg-brand-blue px-6 py-3 font-heading font-semibold text-white transition duration-300 hover:bg-transparent hover:text-brand-gold">
-          Contribute
-        </button>
+        <div className="shrink-0 border-t border-white/10 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+          <a
+            href="/fundraising"
+            className="block w-full cursor-pointer rounded-tl-2xl rounded-br-2xl border border-brand-blue bg-brand-blue px-6 py-3 text-center font-heading font-semibold text-white transition duration-300 hover:bg-transparent hover:text-brand-gold"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contribute
+          </a>
+        </div>
       </aside>
     </nav>
   );

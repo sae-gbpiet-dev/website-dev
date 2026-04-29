@@ -9,7 +9,7 @@ import WhoAreWeSection from "./components/Home/WhoAreWeSection";
 
 export default function HomePage() {
   return (
-    <main className="space-y-12 bg-[linear-gradient(180deg,rgba(34,34,34,0.72),rgba(34,34,34,0.9))] px-4 py-6 text-foreground sm:space-y-16 sm:px-6 lg:space-y-20 lg:px-8">
+    <div className="space-y-12 px-4 py-6 text-foreground sm:space-y-16 sm:px-6 lg:space-y-20 lg:px-8">
       <LandingSection/>
       <WhoAreWeSection/>
       <WhatDrivesUsSection/>
@@ -18,6 +18,6 @@ export default function HomePage() {
       <ContributeSection/>
       <SponsorsSection/>
       <ContactSection/>
-    </main>
+    </div>
   );
 }
