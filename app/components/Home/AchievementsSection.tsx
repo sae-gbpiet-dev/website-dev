@@ -1,71 +1,64 @@
-import React from 'react'
+import React from "react";
 
-const achievementDiamonds = [
-  { color: 'bg-brand-gold', size: 'h-20 w-20', label: '' },
-  { color: 'bg-brand-blue', size: 'h-24 w-24', label: '' },
-  { color: 'bg-brand-gold', size: 'h-28 w-28', label: '' },
-  { color: 'bg-brand-blue', size: 'h-32 w-32', label: '1st' },
-  { color: 'bg-brand-gold', size: 'h-28 w-28', label: '' },
-  { color: 'bg-brand-blue', size: 'h-24 w-24', label: '' },
-  { color: 'bg-brand-gold', size: 'h-20 w-20', label: '' },
-]
+const achievements = [
+  "Secured Rank 1 in Uttarakhand and Delhi NCR (Virtual Event).",
+  "Achieved Rank 3 in Sales Presentation at SAE BAJA 2019.",
+  "Secured Rank 1 in Sledge Pull Event at ATVC 2019.",
+  "Achieved Rank 1 in Sales Presentation at ATVC 2019.",
+  "Ranked 47 out of 283 teams in SAE BAJA 2019 (Virtual Event).",
+  "Secured Rank 57 in SAE mBAJA 2024 (Virtual Event).",
+  "Achieved Rank 7 in Sales Event at SAE mBAJA 2024 (Virtual Event).",
+  "Ranked 45 in the Preliminary Round of SAE eBAJA 2025 (Virtual Event).",
+  "Secured Rank 9 in Design Finals at eBAJA 2025 (Physical Event).",
+  "Achieved Rank 23 in Sales Event at eBAJA 2025 (Static Event).",
+  "Ranked 40 in the Virtual Dynamic Simulation Event at eBAJA 2025.",
+  "Honoured with the Fair Play Award among all participating teams at ATVC 2025.",
+  "Secured Rank 3 in Media Round at ATVC 2025.",
+  "Became the First Team from Northern India to develop a 4WD Electric ATV.",
+  "Achieved Rank 33 in Preliminary Round of SAE eBAJA 2026 (Virtual Event).",
+  "Secured a place among the Top 16 teams in the Manufacturing Excellence Event at SAE eBAJA 2026 (Physical Round).",
+];
 
 function AchievementsSection() {
   return (
-    <section className='mx-auto flex max-w-7xl flex-col items-center gap-10 py-12 sm:gap-12 sm:py-16'>
-      <div className='w-full'>
-        <h1 className='text-center font-heading text-2xl text-white sm:text-3xl'>
+    <section className="mx-auto flex max-w-7xl flex-col items-center gap-10 overflow-hidden py-12 sm:gap-12 sm:py-16">
+      <div className="w-full">
+        <h1 className="text-center font-heading text-2xl text-white sm:text-3xl">
           OUR ACHIEVEMENTS
         </h1>
       </div>
 
-      <div className='relative w-full overflow-hidden py-8 lg:hidden'>
-        <div className='pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent' />
-        <div className='pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent' />
-
-        <div className='achievements-mobile-track flex w-max items-center'>
+      <div className="achievements-carousel w-screen max-w-none">
+        <div className="achievements-carousel-track flex w-max py-8">
           {[0, 1].map((groupIndex) => (
             <div
               aria-hidden={groupIndex === 1}
-              className='flex items-center gap-8 pr-8'
+              className="flex gap-5 px-3 sm:gap-7 sm:px-5"
               key={groupIndex}
             >
-              {achievementDiamonds.map((diamond, index) => (
-                <div
-                  className='flex h-40 w-40 shrink-0 items-center justify-center'
-                  key={`${diamond.color}-${diamond.size}-${index}`}
+              {achievements.map((achievement, index) => (
+                <article
+                  key={`${achievement}-${groupIndex}`}
+                  className={`achievement-card flex min-h-56 w-[18rem] shrink-0 flex-col justify-between rounded-tl-[2.25rem] rounded-br-[2.25rem] p-6 sm:w-[22rem] ${
+                    index % 2 === 0
+                      ? "achievement-card-gold text-brand-dark"
+                      : "achievement-card-blue text-white"
+                  }`}
                 >
-                  <div
-                    className={`h-28 w-28 ${diamond.color} flex rotate-45 items-center justify-center shadow-[0_18px_40px_rgba(0,0,0,0.28)] transition-all duration-500 hover:rotate-90 hover:scale-110`}
-                  >
-                    {diamond.label ? (
-                      <h1 className='-rotate-45 font-heading text-xl text-white'>
-                        {diamond.label}
-                      </h1>
-                    ) : null}
-                  </div>
-                </div>
+                  <span className="font-heading text-base opacity-80">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <p className="pt-8 text-base leading-7 sm:text-lg">
+                    {achievement}
+                  </p>
+                </article>
               ))}
             </div>
           ))}
         </div>
       </div>
-
-      <div className='hidden w-full max-w-5xl grid-cols-7 place-items-center gap-6 lg:grid'>
-        <div className='h-36 w-36 rotate-45 bg-brand-gold transition-all duration-500 hover:z-10 hover:rotate-90 hover:scale-150' />
-        <div className='h-40 w-40 rotate-45 bg-brand-blue transition-all duration-500 hover:z-10 hover:rotate-90 hover:scale-150' />
-        <div className='h-44 w-44 rotate-45 bg-brand-gold transition-all duration-500 hover:z-10 hover:rotate-90 hover:scale-150' />
-        <div className='flex h-48 w-48 rotate-45 cursor-pointer items-center justify-center bg-brand-blue transition-all duration-500 hover:rotate-90 hover:scale-110'>
-          <h1 className='-rotate-45 font-heading text-2xl text-white hover:rotate-90'>
-            1st
-          </h1>
-        </div>
-        <div className='h-44 w-44 rotate-45 bg-brand-gold transition-all duration-500 hover:z-10 hover:rotate-90 hover:scale-150' />
-        <div className='h-40 w-40 rotate-45 bg-brand-blue transition-all duration-500 hover:z-10 hover:rotate-90 hover:scale-150' />
-        <div className='h-36 w-36 rotate-45 bg-brand-gold transition-all duration-500 hover:z-10 hover:rotate-90 hover:scale-150' />
-      </div>
     </section>
-  )
+  );
 }
 
-export default AchievementsSection
+export default AchievementsSection;

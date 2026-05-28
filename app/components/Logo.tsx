@@ -1,21 +1,26 @@
-import { useRouter } from 'next/navigation'
-import React from 'react'
-
-
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 function Logo() {
-
-  const router = useRouter();
   return (
-    <div className='font-heading cursor-pointer flex flex-col items-center justify-center' onClick={()=>{router.push("/")}}>
-      <div className='lg:text-2xl text-brand-blue text-md'>SAE</div>
-      <div className='text-sm font-sans flex items-center justify-center '>
-        <span className='text-[8px] lg:text-sm'>—</span>
-        <span className='text-[12px] lg:text-sm'>GBPIET</span>
-        <span className='text-[8px] lg:text-sm'>—</span>
-      </div>
-    </div>
-  )
+    <Link
+      href="/"
+      className="flex h-14 w-20 shrink-0 items-center justify-center overflow-visible sm:h-16 sm:w-24"
+      aria-label="SAE GBPIET home"
+    >
+      <Image
+        src="/sae-logo.png"
+        alt="SAE GBPIET"
+        width={1000}
+        height={1000}
+        unoptimized
+        priority
+        className="h-full w-full scale-150 object-contain"
+        sizes="(min-width: 640px) 6rem, 5rem"
+      />
+    </Link>
+  );
 }
 
-export default Logo
+export default Logo;

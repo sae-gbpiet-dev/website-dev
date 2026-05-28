@@ -1,7 +1,14 @@
 import Image from "next/image";
 import React from "react";
 
-import { featuredGalleryImages } from "@/app/gallery/galleryData";
+import { getGoogleDriveImageUrl } from "@/app/gallery/galleryData";
+
+const heroImages = {
+  atv: "/assets/images/atv.jpeg",
+  bajaAction: getGoogleDriveImageUrl("1nnAtYBv9coiWxR82DCc8wWgghk7Koe-W"),
+  bajaVehicle: getGoogleDriveImageUrl("1V2ul0slyebDjXBXxPSno-mW8sd0bIxKk"),
+  bajaPit: getGoogleDriveImageUrl("1A4Ch91B5L36N-m9XUecs9uPS2ZsYWuDa"),
+};
 
 function LandingSection() {
   return (
@@ -18,47 +25,50 @@ function LandingSection() {
               SAE GBPIET
             </h1>
           </div>
-          <div className="flex min-h-28 items-center justify-center bg-brand-blue/50 px-5 py-6 text-center sm:min-h-32 sm:px-8 lg:text-left">
+          <div className="flex min-h-32 flex-col items-center justify-center gap-3 bg-brand-blue/50 px-5 py-6 text-center sm:min-h-36 sm:px-8 lg:items-start lg:text-left">
+            <p className="font-heading text-lg text-brand-gold sm:text-2xl">
+              Innovating Today. Engineering Tomorrow.
+            </p>
             <p className="max-w-2xl font-sans text-base leading-7 sm:text-lg">
-              This is some text about SAE, something catchy and eye-catching that
-              introduces the team and sets the tone for the rest of the page.
+              Empowering students through innovation, teamwork, and real-world
+              engineering experiences.
             </p>
           </div>
         </div>
 
         <div className="relative min-h-56 flex-1 overflow-hidden bg-brand-blue/90">
           <Image
-            src={featuredGalleryImages.baja}
-            alt="SAE GBPIET ATV team at BAJA 2025-26"
+            src={heroImages.atv}
+            alt="SAE GBPIET ATV vehicle"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover opacity-85"
+            className="object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/70 via-transparent to-transparent" />
         </div>
       </div>
 
-      <div className="grid min-h-72 flex-1 grid-cols-2 grid-rows-2 gap-3 overflow-hidden rounded-tr-[3rem] bg-white/10 p-3 lg:w-1/2">
+      <div className="grid min-h-72 flex-1 grid-cols-2 grid-rows-2 gap-3 overflow-visible rounded-tr-[3rem] bg-transparent lg:w-1/2">
         {[
           {
-            src: featuredGalleryImages.induction,
-            alt: "SAE GBPIET induction event 2025-26",
+            src: heroImages.bajaAction,
+            alt: "SAE GBPIET ATV in BAJA competition action",
             className: "row-span-2",
           },
           {
-            src: featuredGalleryImages.cadathon,
-            alt: "SolidWorks workshop and Cadathon 2025-26",
+            src: heroImages.bajaVehicle,
+            alt: "SAE GBPIET BAJA vehicle close-up",
             className: "",
           },
           {
-            src: featuredGalleryImages.waterRocket,
-            alt: "Water Rocket 3.0 event 2025-26",
+            src: heroImages.bajaPit,
+            alt: "SAE GBPIET team working around the BAJA vehicle",
             className: "",
           },
         ].map((image) => (
           <div
             key={image.src}
-            className={`relative overflow-hidden rounded-tl-[2rem] rounded-br-[2rem] bg-brand-dark ${image.className}`}
+            className={`relative overflow-hidden rounded-tl-[2rem] rounded-br-[2rem] ${image.className}`}
           >
             <Image
               src={image.src}

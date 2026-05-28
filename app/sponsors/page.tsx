@@ -1,15 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 import PageHeader from "../components/PageHeader";
 
 const sponsorLogos = [
-  "Your Logo",
-  "Partner Name",
-  "Brand Space",
-  "Sponsor",
-  "Industry Ally",
-  "Supporter",
+  {
+    name: "Arc Global",
+    image: "/assets/sponsors/arc-global.png",
+  },
+  {
+    name: "Elara Capital",
+    image: "/assets/sponsors/elara-capital.png",
+  },
+  {
+    name: "Flux Motors",
+    image: "/assets/sponsors/flux-motors.png",
+  },
 ];
 
 const sponsorshipHighlights = [
@@ -63,18 +70,25 @@ function page() {
               Sponsor Showcase
             </h2>
             <p className="mt-3 text-sm text-white/75 sm:text-base">
-              Replace these placeholders with sponsor logos as partnerships are
-              finalized.
+              Our partners support student-led engineering, competition
+              readiness, and hands-on technical growth.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
+          <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
             {sponsorLogos.map((sponsor) => (
               <div
-                key={sponsor}
-                className="flex aspect-[4/3] items-center justify-center rounded-tl-[2rem] rounded-br-[2rem] border border-white/10 bg-white px-4 text-center text-sm font-medium text-brand-dark shadow-md sm:text-base"
+                key={sponsor.name}
+                className="group flex aspect-[5/3] items-center justify-center rounded-tl-[2rem] rounded-br-[2rem] border border-white/10 bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:border-brand-gold hover:shadow-[0_24px_60px_rgba(245,158,11,0.18)]"
               >
-                {sponsor}
+                <Image
+                  src={sponsor.image}
+                  alt={`${sponsor.name} logo`}
+                  width={512}
+                  height={512}
+                  className="max-h-24 w-auto max-w-full object-contain transition duration-300 group-hover:scale-105"
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                />
               </div>
             ))}
           </div>
