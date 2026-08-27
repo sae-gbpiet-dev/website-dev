@@ -287,6 +287,16 @@ const rawMembers = [
   },
   {
     profileImage:
+      "https://drive.google.com/file/d/1iwAjn1ZBm7JHKeIa76NWBJi7AuYLCfwJ/view?usp=sharing",
+    name: "Srishti Joshi",
+    designation: "Team Member (TSR)",
+    email: "srishtijoshi0860@gmail.com",
+    linkedin:
+      "https://www.linkedin.com/in/srishti-joshi-a93aa8390?utm_source=share_via&utm_content=profile&utm_medium=member_android//",
+    instagram: "https://www.instagram.com/sisti._.joshi?igsh=ZHV6YW4waXRqaHF1",
+  },
+  {
+    profileImage:
       "https://drive.google.com/file/d/10gB2h7Ng3ZZlyQtwZnIyIWtdM_1WQ577/view?usp=sharing",
     name: "Soban Kumar",
     designation: "Team Member (TSR)",
@@ -303,16 +313,6 @@ const rawMembers = [
     linkedin:
       "https://www.linkedin.com/in/antriksh-raturi-a73446387?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     instagram: "https://www.instagram.com/antrikshhh__/",
-  },
-  {
-    profileImage:
-      "https://drive.google.com/file/d/1iwAjn1ZBm7JHKeIa76NWBJi7AuYLCfwJ/view?usp=sharing",
-    name: "Srishti Joshi",
-    designation: "Team Member (UAV)",
-    email: "srishtijoshi0860@gmail.com",
-    linkedin:
-      "https://www.linkedin.com/in/srishti-joshi-a93aa8390?utm_source=share_via&utm_content=profile&utm_medium=member_android//",
-    instagram: "https://www.instagram.com/sisti._.joshi?igsh=ZHV6YW4waXRqaHF1",
   },
   {
     profileImage: "https://drive.google.com/open?id=1rJ4bsp1zSRIFLPgytVA9NBM0mrxZAUE_",
