@@ -269,16 +269,6 @@ const rawMembers = [
   },
   {
     profileImage:
-      "https://drive.google.com/file/d/1c77a8pdSuPwIrAI-Nf523Z94fj3ufXae/view?usp=sharing",
-    name: "Amar",
-    designation: "Team Member (TSR)",
-    email: "amarkumar20012008@gmail.com",
-    linkedin:
-      "https://www.linkedin.com/in/amar-rajput-90b276384?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    instagram: "",
-  },
-  {
-    profileImage:
       "https://drive.google.com/file/d/1-E9eqgmuZJLxGi2r13UZhMlVntX_Lrj3/view?usp=sharing",
     name: "Samridhi Chamoli",
     designation: "Team Member (TSR)",
@@ -294,16 +284,6 @@ const rawMembers = [
     email: "divishapandey387@gmail.com",
     linkedin: "",
     instagram: "https://www.instagram.com/divisha.077/?utm_source=ig_web_button_share_sheet",
-  },
-  {
-    profileImage:
-      "https://drive.google.com/file/d/1Za5g-mKc1NE6-GiNBR9oQH_e55AEMXoV/view?usp=sharing",
-    name: "Utkarsh Nautiyal",
-    designation: "Team Member (TSR)",
-    email: "nautiyalutkarsh39@gmail.com",
-    linkedin:
-      "https://www.linkedin.com/in/utkarsh-nautiyal-b5348123b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    instagram: "https://www.instagram.com/utkarsh__nautiyal?igsh=MXZyemJ4Y3Q2Ym1teQ==",
   },
   {
     profileImage:
