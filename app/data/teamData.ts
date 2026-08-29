@@ -352,6 +352,16 @@ const rawMembers = [
   },
   {
     profileImage:
+      "https://drive.google.com/file/d/1iwAjn1ZBm7JHKeIa76NWBJi7AuYLCfwJ/view?usp=sharing",
+    name: "Srishti Joshi",
+    designation: "Team Member (UAV)",
+    email: "srishtijoshi0860@gmail.com",
+    linkedin:
+      "https://www.linkedin.com/in/srishti-joshi-a93aa8390?utm_source=share_via&utm_content=profile&utm_medium=member_android//",
+    instagram: "https://www.instagram.com/sisti._.joshi?igsh=ZHV6YW4waXRqaHF1",
+  },
+  {
+    profileImage:
       "https://drive.google.com/file/d/1Zubw7iMqjeJBVImLFJjFQuRYraw4e5_q/view?usp=sharing",
     name: "Mahima Pandey",
     designation: "Team Member (UAV)",
@@ -484,7 +494,7 @@ export const teamVideos: TeamVideo[] = [
   {
     title: "BAJA - TSR",
     videoUrl:
-      "hhttps://drive.google.com/file/d/1TCfRg5U44JhUoWULi74M4_--AeP51DhA/view?usp=sharing",
+      "https://drive.google.com/file/d/1TCfRg5U44JhUoWULi74M4_--AeP51DhA/view?usp=sharing",
     group: "tsr",
   },
   {
