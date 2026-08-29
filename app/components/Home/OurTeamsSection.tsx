@@ -20,6 +20,14 @@ const teamCards = [
     image: featuredGalleryImages.waterRocket,
     alt: "SAE UAV team preview",
   },
+   {
+    title: "Team Media",
+    description:
+      "Transforming workshops and competitions into compelling digital stories through striking visuals, cinematic storytelling, and bold design.",
+    href: "/teams/media",
+    image: featuredGalleryImages.waterRocket,
+    alt: "MEDIA team preview",
+  },
 ];
 
 function OurTeamsSection() {
