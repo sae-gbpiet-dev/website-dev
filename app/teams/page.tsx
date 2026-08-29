@@ -17,6 +17,12 @@ const teamCards = [
     image: featuredGalleryImages.waterRocket,
     alt: "SAE UAV team preview",
   },
+  {
+    title: "Media",
+    href: "/teams/media",
+    image: featuredGalleryImages.workshop,
+    alt: "SAE Media team preview",
+  },
 ];
 
 function page() {
@@ -26,11 +32,11 @@ function page() {
 
       <div className="flex w-full flex-col items-center px-4">
         <h1 className="p-6 text-center">
-          We have some of the best UAV and ATV teams under our hood
+          We have some of the best UAV, ATV, and Media teams under our hood
         </h1>
 
         <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 py-12 sm:gap-10 sm:py-16">
-          <div className="grid w-full max-w-4xl gap-5 sm:grid-cols-2">
+          <div className="grid w-full max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {teamCards.map((team) => (
               <Link
                 key={team.title}

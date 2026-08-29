@@ -11,7 +11,7 @@ import { PiDroneFill } from "react-icons/pi";
 import type { TeamMember } from "@/app/data/teamData";
 import { getGoogleDriveImageUrl } from "@/app/data/teamData";
 
-type CardVariant = "atv" | "uav";
+type CardVariant = "atv" | "uav" | "media";
 
 interface TeamMemberCardProps {
   variant: CardVariant;
@@ -165,3 +165,7 @@ export function ATVTeamMemberCard({ member }: { member: TeamMember }) {
 export function UAVTeamMemberCard({ member }: { member: TeamMember }) {
   return <TeamMemberCard variant="uav" member={member} />;
 }
+export function MEDIATeamMemberCard({ member }: { member: TeamMember }) {
+  return <TeamMemberCard variant="media" member={member} />;
+}
+

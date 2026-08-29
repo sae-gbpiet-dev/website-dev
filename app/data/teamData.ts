@@ -13,7 +13,7 @@ export interface TeamMember {
 export interface TeamVideo {
   title: string;
   videoUrl: string;
-  group: "tsr" | "uav" | "events";
+  group: "tsr" | "uav" | "events" | "media";
 }
 
 export function getGoogleDriveFileId(url: string) {

@@ -1,4 +1,9 @@
-export type GalleryCategory = "events" | "uav" | "atv" | "miscellaneous";
+export type GalleryCategory =
+  | "events"
+  | "uav"
+  | "atv"
+  | "media"
+  | "miscellaneous";
 
 export interface GalleryPhoto {
   id: string;
