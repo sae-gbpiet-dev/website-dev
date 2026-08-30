@@ -512,7 +512,7 @@ export const teamVideos: TeamVideo[] = [
   {
     title: "Solidworks Workshop Cadathon 2025-26",
     videoUrl:
-      "https://drive.google.com/file/d/1e9WvWzcO2SlNxTWFpMlkR72FpsCgRaWy/view?usp=sharing",
+      "https://drive.google.com/file/d/1pYMPX7HzEziH9Ycdo17P7ukDKeDa-aW0/view?usp=drive_link",
     group: "events",
   },
 ];
