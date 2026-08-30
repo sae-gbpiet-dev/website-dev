@@ -333,6 +333,15 @@ const rawMembers = [
   },
   {
     profileImage:
+      "https://drive.google.com/file/d/139R6BMERUuMtpNCXgFTcAB3hhBW4qB1A/view?usp=drive_link",
+    name: "Sanjana Barthwal ",
+    designation: "Team Member (UAV)",
+    email: "sanjanasudarshanbarthwal@gmail.com",
+    linkedin: "https://in.linkedin.com/in/sanjana-barthwal-873832380",
+    instagram: "",
+  },
+  {
+    profileImage:
       "https://drive.google.com/file/d/1cj-12OJx5oelsoBamZ-o9TpHH2V8GQpH/view?usp=sharing",
     name: "Avni Tyagi",
     designation: "Team Member (UAV)",
