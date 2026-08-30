@@ -107,7 +107,7 @@ const rawMembers = [
   },
   {
     profileImage:
-      "https://drive.google.com/file/d/1KxrC2EGCAWpWKJHhsHSSanVVuzF-FABP/view?usp=sharing",
+      "https://drive.google.com/file/d/1eCIuH8MfKH4heMdkRynafOvAhRHgBgnb/view?usp=sharing",
     name: "Saksham Rawat",
     designation: "Media Head, TSR Vice Captain",
     email: "sakshamrawat1479@gmail.com",
@@ -333,7 +333,7 @@ const rawMembers = [
   },
   {
     profileImage:
-      "https://drive.google.com/file/d/139R6BMERUuMtpNCXgFTcAB3hhBW4qB1A/view?usp=drive_link",
+      "https://drive.google.com/file/d/1TgATJuZLSRk_ZlMTyFOpMCz8hFlKpoxZ/view?usp=sharing",
     name: "Sanjana Barthwal ",
     designation: "Team Member (UAV)",
     email: "sanjanasudarshanbarthwal@gmail.com",
@@ -447,7 +447,7 @@ const rawMembers = [
   },
   {
     profileImage:
-      "https://drive.google.com/file/d/10zFe8XGMH4crkCngogMik3TxUjpLCF4B/view?usp=sharing",
+      "https://drive.google.com/file/d/1zmeOCgWxP7-BRzWN7_sTKSdhkYm0_3qF/view?usp=sharing",
     name: "Nikita",
     designation: "Team Member (Media)",
     email: "nikitasajwan51@gmail.com",
