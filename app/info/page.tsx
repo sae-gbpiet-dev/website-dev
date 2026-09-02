@@ -15,7 +15,7 @@ function page() {
     <div className='min-h-screen flex flex-col items-center justify-center px-6 py-20'>
         <PageHeader title='ABOUT US' />
 
-        <div className='mt-10 flex w-full max-w-4xl flex-col gap-5 text-base leading-8 text-neutral-700 md:text-lg md:leading-9'>
+        <div className='mt-10 flex w-full max-w-4xl flex-col gap-5 text-base font-medium leading-8 text-white/90 md:text-lg md:leading-9'>
           {aboutParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
