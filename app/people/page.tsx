@@ -15,7 +15,7 @@ const peopleSections = [
   {
     title: "Leadership",
     description:
-      "Club and subsystem leads guiding the season across TSR, UAV, media, and operations.",
+      "Our leads coordinate the work happening across TSR, UAV, Media, and club operations, making sure ideas turn into plans and plans turn into actual work.",
     members: leadershipMembers,
     variant: "atv",
   },

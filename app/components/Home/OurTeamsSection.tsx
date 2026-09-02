@@ -7,7 +7,7 @@ const teamCards = [
   {
     title: "Team Savitar Racing",
     description:
-      "From concept to competition, TSR brings together engineering, fabrication, testing, and racing to build high-performance off-road vehicles for the SAE BAJA challenge.",
+      "Our flagship crew. TSR takes an ATV from a rough sketch to a race-ready machine, covering design, fabrication, testing, and the actual racing at SAE BAJA. It's the team where 'back to the drawing board' happens more than once a season.",
     href: "/teams/atv",
     image: featuredGalleryImages.baja,
     alt: "Team Savitar Racing ATV preview",
@@ -15,7 +15,7 @@ const teamCards = [
   {
     title: "Team Antigravity",
     description:
-      "A student team exploring aerial systems, technical events, and practical engineering through design and hands-on experimentation.",
+      "Our UAV crew. They spend their time getting things to fly through hands-on design work and technical competitions.",
     href: "/teams/uav",
     image: featuredGalleryImages.waterRocket,
     alt: "SAE UAV team preview",
@@ -23,7 +23,7 @@ const teamCards = [
    {
     title: "Team Media",
     description:
-      "Transforming workshops and competitions into compelling digital stories through striking visuals, cinematic storytelling, and bold design.",
+      "The team that makes sure everyone else's late nights don't go undocumented. They turn workshop chaos and competition chaos alike into visuals and stories worth watching.",
     href: "/teams/media",
     image: featuredGalleryImages.waterRocket,
     alt: "MEDIA team preview",

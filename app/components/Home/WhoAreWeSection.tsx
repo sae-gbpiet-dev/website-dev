@@ -4,25 +4,25 @@ const identityCards = [
   {
     title: "Innovation",
     description:
-      "Transforming ideas into impactful engineering solutions through creativity, technology, and hands-on learning.",
+      "We don't wait for the 'right' answer. If something hasn't been tried before, that's usually reason enough to try it, sketch it, test it, and see if it holds up.",
     className: "bg-brand-gold text-brand-dark",
   },
   {
     title: "Teamwork",
     description:
-      "A community of passionate students collaborating, learning, and growing together beyond the classroom.",
+      "Nobody builds an ATV alone. This is a group of students who show up on weekends, disagree about design choices, and somehow still end up with a working vehicle by competition day.",
     className: "bg-brand-blue text-white",
   },
   {
     title: "Technical Excellence",
     description:
-      "Building practical skills through workshops, competitions, design challenges, and real-world engineering exposure.",
+      "We learn by breaking things and fixing them. Welding, wiring, machining, testing: the classroom teaches the theory, but the workshop is where it actually clicks.",
     className: "bg-brand-blue text-white",
   },
   {
     title: "Leadership & Growth",
     description:
-      "Empowering future engineers to lead, innovate, and create meaningful change through experience and dedication.",
+      "Everyone starts somewhere, usually holding a wrench. A year or two in, that same person is running a subsystem. That's kind of how this team works.",
     className: "bg-brand-gold text-brand-dark",
   },
 ];

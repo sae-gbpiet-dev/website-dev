@@ -10,7 +10,7 @@ function WhatDrivesUsSection() {
       description:
         "To create a culture of innovation and practical engineering where students transform ideas into impactful solutions and become future industry leaders.",
       detail:
-        "We build a space where curiosity becomes prototypes, ideas become tested systems, and students learn to think like engineers through practice.",
+        "We want this to be the place where students stop just studying engineering and start doing it. An idea scribbled on a whiteboard should be able to become a working prototype and eventually, a machine you can actually drive. That's the shift we're chasing: from curiosity to competence, one build at a time.",
       image: featuredGalleryImages.catalyst,
       alt: "SAE GBPIET students during Catalyst event",
       frameClassName: "bg-brand-gold",
@@ -21,7 +21,7 @@ function WhatDrivesUsSection() {
       description:
         "To empower students through workshops, projects, competitions, and teamwork while building technical and leadership excellence.",
       detail:
-        "Hands-on sessions, design reviews, fabrication work, and team-led learning help members grow beyond theory and into real execution.",
+        "We throw students into real problems on purpose. Workshops, design reviews, fabrication marathons, competitions that don't go as planned: it's not always comfortable, but it's how people actually learn to build, lead, and troubleshoot under pressure.",
       image: featuredGalleryImages.workshop,
       alt: "SAE GBPIET workshop session",
       frameClassName: "bg-brand-blue",
@@ -32,7 +32,7 @@ function WhatDrivesUsSection() {
       description:
         "Measured through innovation, real-world experience, collaborative growth, and the achievements of every member of SAE GBPIET.",
       detail:
-        "Every competition, project, and technical event becomes proof of what students can build together with discipline, resilience, and shared ambition.",
+        "The trophies are nice, but they're not really the point. The real impact is the student who walked in not knowing how to use a lathe and walked out running a subsystem. Every competition is just proof of how far that kind of growth can go.",
       image: featuredGalleryImages.baja,
       alt: "SAE GBPIET BAJA competition team",
       frameClassName: "bg-brand-gold",
