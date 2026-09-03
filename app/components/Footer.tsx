@@ -29,6 +29,12 @@ function Footer() {
               <Link href="/info">About</Link>
             </li>
             <li className="text-xs hover:text-white">
+              <Link href="/people">People</Link>
+            </li>
+            <li className="text-xs hover:text-white">
+              <Link href="/teams">Teams</Link>
+            </li>
+            <li className="text-xs hover:text-white">
               <Link href="/contact">Contact</Link>
             </li>
             <li className="text-xs hover:text-white">
@@ -38,7 +44,19 @@ function Footer() {
               <Link href="/teams/uav">UAV</Link>
             </li>
             <li className="text-xs hover:text-white">
+              <Link href="/teams/media">Media</Link>
+            </li>
+            <li className="text-xs hover:text-white">
               <Link href="/news">News</Link>
+            </li>
+            <li className="text-xs hover:text-white">
+              <Link href="/gallery">Gallery</Link>
+            </li>
+            <li className="text-xs hover:text-white">
+              <Link href="/sponsors">Sponsors</Link>
+            </li>
+            <li className="text-xs hover:text-white">
+              <Link href="/fundraising">Fundraisers</Link>
             </li>
           </ul>
         </div>

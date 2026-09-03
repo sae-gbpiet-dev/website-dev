@@ -14,10 +14,6 @@ interface AppShellProps {
 function AppShell({ children }: AppShellProps) {
   const pathname = usePathname();
   const isStudioRoute = pathname.startsWith("/studio");
-  const showClubTimelineDrawer =
-    pathname === "/teams" ||
-    pathname === "/teams/atv" ||
-    pathname === "/teams/uav";
 
   if (isStudioRoute) {
     return <main className="min-h-screen">{children}</main>;
@@ -28,7 +24,7 @@ function AppShell({ children }: AppShellProps) {
       <div aria-hidden="true" className="site-background" />
       <div className="relative z-10 flex min-h-screen flex-col">
         <Navbar />
-        {showClubTimelineDrawer ? <ClubTimelineDrawer /> : null}
+        <ClubTimelineDrawer />
         <main className="grow pt-24 sm:pt-28 lg:pt-32">{children}</main>
         <Footer />
       </div>

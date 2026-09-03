@@ -81,11 +81,11 @@ function ClubTimelineDrawer() {
   }, [isOpen]);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[70] hidden lg:block">
+    <div className="pointer-events-none fixed inset-0 z-[70]">
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className={`pointer-events-auto absolute top-1/2 right-0 flex min-h-[8.5rem] -translate-y-1/2 translate-x-0 items-center  border border-white/20 bg-brand-gold/90 px-4 py-5 text-brand-dark shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-300 hover:-translate-x-1 ${
+        className={`pointer-events-auto absolute top-1/2 right-0 flex min-h-[8.5rem] -translate-y-1/2 translate-x-0 items-center border border-white/20 bg-brand-gold/90 px-3 py-5 text-brand-dark shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-300 hover:-translate-x-1 sm:px-4 ${
           isOpen ? "opacity-0" : "opacity-100"
         }`}
         aria-label="Open timeline and challenges panel"
@@ -105,7 +105,7 @@ function ClubTimelineDrawer() {
       />
 
       <div
-        className={`pointer-events-auto absolute inset-y-0 right-0 h-screen w-[26rem] max-w-[calc(100vw-3rem)]  border-l border-white/20 bg-brand-gold/88 text-brand-dark shadow-[0_24px_60px_rgba(0,0,0,0.34)] backdrop-blur-2xl transition-transform duration-300 ${
+        className={`pointer-events-auto absolute inset-y-0 right-0 h-screen w-[26rem] max-w-[calc(100vw-1.5rem)] border-l border-white/20 bg-brand-gold/88 text-brand-dark shadow-[0_24px_60px_rgba(0,0,0,0.34)] backdrop-blur-2xl transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!isOpen}

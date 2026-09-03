@@ -36,11 +36,44 @@ export interface FundraisingItem {
   ctaLabel?: string
   ctaUrl?: string
   coverImage?: FundraisingImage
+  localCoverImage?: string
   milestones: FundraisingMilestone[]
 }
 
 export interface FundraisingDetail extends FundraisingItem {
   body?: PortableTextBlock[]
+}
+
+const previousFundraiser: FundraisingDetail = {
+  _id: 'previous-atv-baja-2027',
+  title: 'Fund our ATV for BAJA 2027',
+  slug: 'fund-our-atv-for-baja-2027',
+  team: 'atv',
+  status: 'active',
+  shortDescription: 'This is a test fundraiser',
+  intro: 'This is the test intro',
+  raised: 10000,
+  goal: 500000,
+  supportersCount: 20,
+  ctaLabel: 'Support This Fundraiser',
+  ctaUrl: '/contact',
+  localCoverImage: '/assets/images/atv.jpeg',
+  milestones: [
+    {
+      amount: 10000,
+      title: 'You gave us tires',
+      description: 'You gave us tires',
+    },
+  ],
+  body: [
+    {
+      _key: 'previous-content-block',
+      _type: 'block',
+      children: [{_key: 'previous-content-span', _type: 'span', marks: [], text: 'this is test content'}],
+      markDefs: [],
+      style: 'normal',
+    },
+  ],
 }
 
 const fundraisingListQuery = groq`
@@ -101,15 +134,30 @@ const fundraisingSlugsQuery = groq`
 `
 
 export const getFundraisingItems = cache(async (): Promise<FundraisingItem[]> => {
-  return client.fetch(fundraisingListQuery)
+  try {
+    const items = await client.fetch(fundraisingListQuery)
+    return items.length ? items : [previousFundraiser]
+  } catch {
+    return [previousFundraiser]
+  }
 })
 
 export const getFundraisingSlugs = cache(async (): Promise<string[]> => {
-  return client.fetch(fundraisingSlugsQuery)
+  try {
+    const slugs = await client.fetch(fundraisingSlugsQuery)
+    return slugs.length ? slugs : [previousFundraiser.slug]
+  } catch {
+    return [previousFundraiser.slug]
+  }
 })
 
 export const getFundraisingBySlug = cache(async (slug: string): Promise<FundraisingDetail | null> => {
-  return client.fetch(fundraisingBySlugQuery, {slug})
+  try {
+    const item = await client.fetch(fundraisingBySlugQuery, {slug})
+    return item || (slug === previousFundraiser.slug ? previousFundraiser : null)
+  } catch {
+    return slug === previousFundraiser.slug ? previousFundraiser : null
+  }
 })
 
 export async function getFundraisingBySlugOrThrow(slug: string): Promise<FundraisingDetail> {

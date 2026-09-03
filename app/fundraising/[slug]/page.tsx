@@ -144,9 +144,9 @@ export default async function FundraisingDetailPage({params}: FundraisingDetailP
         ? "-translate-x-full"
         : "-translate-x-1/2"
   const accent = getAccentClasses(item.team)
-  const heroImageUrl = item.coverImage?.asset
+  const heroImageUrl = item.localCoverImage || (item.coverImage?.asset
     ? urlFor(item.coverImage).width(1600).height(900).fit('crop').url()
-    : null
+    : null)
 
   return (
     <div className="px-4 py-10 sm:px-6 sm:py-14 lg:px-8">

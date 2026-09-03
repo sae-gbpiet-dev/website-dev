@@ -71,15 +71,27 @@ const slugsQuery = groq`
 `
 
 export const getNewsItems = cache(async (): Promise<NewsItem[]> => {
-  return client.fetch(newsListQuery)
+  try {
+    return await client.fetch(newsListQuery)
+  } catch {
+    return []
+  }
 })
 
 export const getNewsSlugs = cache(async (): Promise<string[]> => {
-  return client.fetch(slugsQuery)
+  try {
+    return await client.fetch(slugsQuery)
+  } catch {
+    return []
+  }
 })
 
 export const getNewsBySlug = cache(async (slug: string): Promise<NewsDetail | null> => {
-  return client.fetch(newsBySlugQuery, {slug})
+  try {
+    return await client.fetch(newsBySlugQuery, {slug})
+  } catch {
+    return null
+  }
 })
 
 export async function getNewsBySlugOrThrow(slug: string): Promise<NewsDetail> {

@@ -78,8 +78,8 @@ async function page() {
       <div className="flex w-full max-w-6xl flex-col items-center gap-10 py-10 sm:gap-12 sm:py-12">
         <section className="flex w-full max-w-4xl flex-col items-center gap-6 text-center">
           <p className="max-w-3xl text-base leading-7 text-white/90 sm:text-lg">
-            Our fundraising efforts are crucial in supporting our teams' journeys to
-            success. Each fundraiser is dedicated to a specific team and their unique goals, whether it's developing cutting-edge technology, covering
+            Our fundraising efforts are crucial in supporting our teams&apos; journeys to
+            success. Each fundraiser is dedicated to a specific team and their unique goals, whether it&apos;s developing cutting-edge technology, covering
             travel expenses, or funding essential resources.
           </p>
 
