@@ -48,7 +48,7 @@ function Footer() {
           <h3 className="font-semibold mb-3">Follow Us</h3>
           <div className="flex gap-4 text-gray-400">
             <a
-              href="https://www.linkedin.com/in/sae-gbpiet-506a86296?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              href="https://www.instagram.com/saegbpiet?igsi=OHBhcXpzaDFwcHZn"
               target="_blank"
               rel="noreferrer"
               aria-label="SAE GBPIET on Instagram"
@@ -57,7 +57,7 @@ function Footer() {
               <FaInstagram/>
             </a>
             <a
-              href="https://www.linkedin.com/company/sae-gbpiet/"
+              href="https://www.linkedin.com/in/sae-gbpiet-506a86296?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
               rel="noreferrer"
               aria-label="SAE GBPIET on LinkedIn"
