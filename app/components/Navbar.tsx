@@ -10,14 +10,14 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-  const aboutPaths = ["/about", "/people", "/teams", "/info"];
+  const aboutPaths = ["/people", "/teams", "/info"];
 
   const navItems = [
-    { label: "Home", href: "/" },
+    { label: "Contact", href: "/contact" },
+    { label: "ATV", href: "/teams/atv" },
+    { label: "UAV", href: "/teams/uav" },
+    { label: "Media", href: "/teams/media" },
     { label: "News", href: "/news" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Sponsors", href: "/sponsors" },
-    { label: "Fundraising", href: "/fundraising" },
   ];
 
   const isActivePath = (href: string) => {
@@ -170,38 +170,16 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="/about"
+                href="/info"
                 className={`block rounded-tl-2xl rounded-br-2xl px-4 py-2.5 transition duration-300 hover:bg-brand-blue hover:text-white ${
-                  isActivePath("/about") ? "bg-white/8 text-brand-gold" : ""
+                  isActivePath("/info") ? "bg-white/8 text-brand-gold" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
             </li>
-            <li>
-              <a
-                href="/teams"
-                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-2.5 transition duration-300 hover:bg-brand-blue hover:text-white ${
-                  isActivePath("/teams") ? "bg-white/8 text-brand-gold" : ""
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Teams
-              </a>
-            </li>
-            <li>
-              <a
-                href="/people"
-                className={`block rounded-tl-2xl rounded-br-2xl px-4 py-2.5 transition duration-300 hover:bg-brand-blue hover:text-white ${
-                  isActivePath("/people") ? "bg-white/8 text-brand-gold" : ""
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                People
-              </a>
-            </li>
-            {navItems.slice(1).map((item) => (
+            {navItems.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}

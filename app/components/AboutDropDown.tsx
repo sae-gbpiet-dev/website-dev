@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { IoMdArrowDropdown } from 'react-icons/io'
 
 interface AboutDropDownProps {
@@ -19,14 +20,14 @@ function AboutDropDown({ onNavigate, active = false }: AboutDropDownProps) {
           active ? 'text-brand-gold' : ''
         }`}
       >
-        <span className="relative cursor-pointer inline-flex items-center">
+        <Link href="/info" className="relative inline-flex items-center">
           About
           <span
             className={`pointer-events-none absolute -bottom-[6px] left-0 h-[2px] bg-brand-gold transition-all duration-300 ${
               active ? 'w-full opacity-100' : 'w-0 opacity-0'
             }`}
           />
-        </span>
+        </Link>
 
         <IoMdArrowDropdown className="transition-transform duration-300 group-hover:rotate-180" />
       </div>
