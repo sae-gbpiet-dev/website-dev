@@ -87,7 +87,7 @@ function Navbar() {
               <li>
                 <AboutDropDown active={isAboutActive} />
               </li>
-              {navItems.slice(1).map((item) => (
+              {navItems.map((item) => (
                 <li key={item.label}>
                   <a
                     href={item.href}
