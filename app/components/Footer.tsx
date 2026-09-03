@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Logo from './Logo'
 import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 
@@ -21,12 +22,24 @@ function Footer() {
         <div>
           <h3 className="font-heading text-sm mb-3">Links</h3>
           <ul className="space-y-2 text-gray-400">
-            <li className="hover:text-white cursor-pointer text-xs">Home</li>
-            <li className="hover:text-white cursor-pointer text-xs">About</li>
-            <li className="hover:text-white cursor-pointer text-xs">Contact</li>
-              <li className="hover:text-white cursor-pointer text-xs">ATV</li>
-            <li className="hover:text-white cursor-pointer text-xs">UAV</li>
-            <li className="hover:text-white cursor-pointer text-xs">News</li>
+            <li className="text-xs hover:text-white">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="text-xs hover:text-white">
+              <Link href="/info">About</Link>
+            </li>
+            <li className="text-xs hover:text-white">
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li className="text-xs hover:text-white">
+              <Link href="/teams/atv">ATV</Link>
+            </li>
+            <li className="text-xs hover:text-white">
+              <Link href="/teams/uav">UAV</Link>
+            </li>
+            <li className="text-xs hover:text-white">
+              <Link href="/news">News</Link>
+            </li>
           </ul>
         </div>
 
@@ -34,12 +47,24 @@ function Footer() {
         <div>
           <h3 className="font-semibold mb-3">Follow Us</h3>
           <div className="flex gap-4 text-gray-400">
-            <span className="hover:text-white cursor-pointer">
+            <a
+              href="https://www.instagram.com/sae_gbpiet/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="SAE GBPIET on Instagram"
+              className="hover:text-white"
+            >
               <FaInstagram/>
-            </span>
-            <span className="hover:text-white cursor-pointer">
+            </a>
+            <a
+              href="https://www.linkedin.com/company/sae-gbpiet/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="SAE GBPIET on LinkedIn"
+              className="hover:text-white"
+            >
               <FaLinkedin/>
-            </span>
+            </a>
           </div>
         </div>
 
