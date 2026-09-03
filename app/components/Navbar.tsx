@@ -70,7 +70,7 @@ function Navbar() {
       >
         <div className="flex items-center justify-between gap-4 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center">
           <div className="shrink-0">
-            <Logo scaleClass="scale-[4]" />
+            <Logo scaleClass="scale-[3]" />
           </div>
 
           <div className="hidden items-center justify-self-center lg:flex">
