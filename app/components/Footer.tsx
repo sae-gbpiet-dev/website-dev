@@ -5,12 +5,12 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 function Footer() {
   return (
-    <footer className="bg-brand-blue/10 px-6 py-12 text-white sm:py-14">
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3 md:gap-12">
+    <footer className="bg-brand-blue/10 px-6 py-14 text-white sm:py-16">
+      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-3 md:gap-16">
 
         {/* Section 1 */}
         <div>
-          <h2 className="mb-3 text-xl font-semibold">
+          <h2 className="mb-4 scale-125 origin-left text-2xl font-semibold sm:text-3xl">
             <Logo/>
           </h2>
           <p className="text-gray-400">
@@ -19,9 +19,9 @@ function Footer() {
         </div>
 
         {/* Section 2 */}
-        <div>
-          <h3 className="mb-4 font-heading text-base text-white sm:text-lg">Links</h3>
-          <ul className="space-y-2.5 text-sm text-gray-300 sm:text-base">
+        <div className="flex flex-col gap-4">
+          <h3 className="font-heading text-3xl text-white sm:text-4xl">Links</h3>
+          <ul className="flex flex-col gap-4 text-2xl text-gray-200 sm:text-3xl">
             <li className="transition-colors hover:text-brand-gold">
               <Link href="/">Home</Link>
             </li>
@@ -63,14 +63,14 @@ function Footer() {
 
         {/* Section 3 */}
         <div>
-          <h3 className="mb-4 font-heading text-base text-white sm:text-lg">Follow Us</h3>
-          <div className="flex gap-4 text-gray-300">
+          <h3 className="mb-7 font-heading text-3xl text-white sm:text-4xl">Follow Us</h3>
+          <div className="flex gap-6 text-white">
             <a
               href="https://www.instagram.com/saegbpiet?igsi=OHBhcXpzaDFwcHZn"
               target="_blank"
               rel="noreferrer"
               aria-label="SAE GBPIET on Instagram"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 text-2xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:bg-brand-gold hover:text-brand-dark"
+              className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-white/35 bg-white/10 text-5xl shadow-[0_8px_24px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:bg-brand-gold hover:text-brand-dark"
             >
               <FaInstagram aria-hidden="true" />
             </a>
@@ -79,7 +79,7 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="SAE GBPIET on LinkedIn"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 text-2xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:bg-brand-gold hover:text-brand-dark"
+              className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-white/35 bg-white/10 text-5xl shadow-[0_8px_24px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:bg-brand-gold hover:text-brand-dark"
             >
               <FaLinkedin aria-hidden="true" />
             </a>
@@ -88,8 +88,10 @@ function Footer() {
 
       </div>
 
+      <div className="h-32" aria-hidden="true" />
+
       {/* Bottom */}
-      <div className="mt-10 border-t border-gray-700 pt-5 text-center font-heading text-sm text-gray-400">
+      <div className="border-t border-gray-700 pt-7 text-center font-heading text-xl text-gray-300 sm:text-2xl">
         © {new Date().getFullYear()} SAE GBPIET. All rights reserved.
       </div>
     </footer>
