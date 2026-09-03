@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-function Logo() {
+function Logo({ scaleClass = "scale-[2]" }: { scaleClass?: string }) {
   return (
     <Link
       href="/"
@@ -16,7 +16,7 @@ function Logo() {
         height={1000}
         unoptimized
         priority
-        className="h-full w-full scale-150 object-contain"
+        className={`h-full w-full object-contain ${scaleClass}`}
         sizes="(min-width: 640px) 9rem, 7rem"
       />
     </Link>
