@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import Logo from "./Logo";
@@ -14,9 +15,6 @@ function Navbar() {
 
   const navItems = [
     { label: "Contact", href: "/contact" },
-    { label: "ATV", href: "/teams/atv" },
-    { label: "UAV", href: "/teams/uav" },
-    { label: "Media", href: "/teams/media" },
     { label: "News", href: "/news" },
   ];
 
@@ -42,7 +40,9 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    setIsMenuOpen(false);
+    const frameId = requestAnimationFrame(() => setIsMenuOpen(false));
+
+    return () => cancelAnimationFrame(frameId);
   }, [pathname]);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ function Navbar() {
           <div className="hidden items-center justify-self-center lg:flex">
             <ul className="flex items-center gap-2  px-3 py-2 text-sm font-heading">
               <li>
-                <a
+                <Link
                   href="/"
                   className={`relative inline-flex rounded-full px-4 py-2 transition duration-300 ${
                     isActivePath("/") ? "text-brand-gold" : ""
@@ -82,7 +82,7 @@ function Navbar() {
                       isActivePath("/") ? "w-[calc(100%-2rem)] opacity-100" : "w-0 opacity-0"
                     }`}
                   />
-                </a>
+                </Link>
               </li>
               <li>
                 <AboutDropDown active={isAboutActive} />
@@ -158,7 +158,7 @@ function Navbar() {
         <div className="mt-4 min-h-0 flex-1 overflow-y-auto pb-3 font-heading">
           <ul className="flex flex-col gap-2 text-sm">
             <li>
-              <a
+              <Link
                 href="/"
                 className={`block rounded-tl-2xl rounded-br-2xl px-4 py-2.5 transition duration-300 hover:bg-brand-blue hover:text-white ${
                   isActivePath("/") ? "bg-white/8 text-brand-gold" : ""
@@ -166,7 +166,7 @@ function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -196,13 +196,13 @@ function Navbar() {
         </div>
 
         <div className="shrink-0 border-t border-white/10 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
-          <a
+          <Link
             href="/fundraising"
             className="block w-full cursor-pointer rounded-tl-2xl rounded-br-2xl border border-brand-blue bg-brand-blue px-6 py-3 text-center font-heading font-semibold text-white transition duration-300 hover:bg-transparent hover:text-brand-gold"
             onClick={() => setIsMenuOpen(false)}
           >
             Contribute
-          </a>
+          </Link>
         </div>
       </aside>
     </nav>
